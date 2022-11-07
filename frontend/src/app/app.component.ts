@@ -11,8 +11,6 @@ export class AppComponent {
   title = 'web';
 
   signout() {
-    this.oidc.logoff('identityserver', {
-      redirectUrl: '/dashboard'
-    })
+    this.oidc.logoff();
   }
 }

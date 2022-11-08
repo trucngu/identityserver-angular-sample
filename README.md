@@ -1,5 +1,7 @@
 ## OIDC ASPNET Core + Angular
 
+TODO: to be updated
+
 ### Terminology
 #### Users
 - Human

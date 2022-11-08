@@ -1,4 +1,4 @@
-## OIDC ASPNET Core + Angular
+## Basic identity server angular sample
 
 TODO: to be updated
 

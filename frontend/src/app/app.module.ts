@@ -1,22 +1,30 @@
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
+import {NgModule} from '@angular/core'
+import {BrowserModule} from '@angular/platform-browser'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
-import { AuthConfigModule } from './auth/auth-config.module'
-import { CoreModule } from './core/core.module'
+import {AppRoutingModule} from './app-routing.module'
+import {AppComponent} from './app.component'
+import {AuthConfigModule} from './auth/auth-config.module'
+import {AuthInterceptor} from 'angular-auth-oidc-client';
+import {WeatherComponent} from './weather/weather.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     AuthConfigModule,
-    CoreModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

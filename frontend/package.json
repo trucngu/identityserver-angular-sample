@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "angular-auth-oidc-client": "14.1.5",
+    "dayjs": "^1.11.6",
     "lucide-angular": "^0.98.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

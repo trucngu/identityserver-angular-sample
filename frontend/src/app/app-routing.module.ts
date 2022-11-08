@@ -1,12 +1,8 @@
-import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
-import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client'
-import { AuthGuard } from './auth.guard'
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component'
-import { UnauthorizedComponent } from './core/unauthorized/unauthorized.component'
-import { DashboardComponent } from './sales/dashboard/dashboard.component'
-import { InvoicingComponent } from './sales/invoicing/invoicing.component'
-import { SaleOrdersComponent } from './sales/sale-orders/sale-orders.component'
+import {NgModule} from '@angular/core'
+import {RouterModule, Routes} from '@angular/router'
+import {AutoLoginAllRoutesGuard} from 'angular-auth-oidc-client'
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {WeatherComponent} from "./weather/weather.component";
 
 const routes: Routes = [
   {
@@ -16,22 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    component: WeatherComponent,
     canActivate: [AutoLoginAllRoutesGuard,]
-  },
-  {
-    path: 'sale-orders',
-    component: SaleOrdersComponent,
-    canActivate: [AutoLoginAllRoutesGuard,]
-  },
-  {
-    path: 'invoicing',
-    component: InvoicingComponent,
-    canActivate: [AutoLoginAllRoutesGuard,]
-  },
-  {
-    path: 'unauthorized',
-    component: UnauthorizedComponent,
   },
   {
     path: "**",
@@ -43,4 +25,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

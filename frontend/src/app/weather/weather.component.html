@@ -1,0 +1,13 @@
+<ul class="flex flex-col gap-2">
+  <li *ngFor="let m of model" class="p-10 bg-slate-200 rounded">
+    <p>{{formatDate(m.date)}}</p>
+    <div>
+      <div class="text-3xl">
+        {{m.summary}}
+      </div>
+      <div class="text-5xl">
+        {{m.temperatureC}} ℃
+      </div>
+    </div>
+  </li>
+</ul>
